@@ -43,7 +43,7 @@ def main():
                 continue
 
             manager.add_employee(emp_id, name, designation, salary)
-            print("Employee added successfully!")
+            print("\n Employee added successfully! ")
 
         elif option == "2":
             emp_id = input("Enter Employee ID to Update: ").strip()
@@ -52,18 +52,18 @@ def main():
             salary = input("Enter new Salary (Leave blank to keep unchanged): ").strip()
 
             if manager.update_employee(emp_id, name or None, designation or None, salary or None):
-                print("Employee updated successfully!")
+                print("\n Employee updated successfully!")
             else:
-                print("Employee not found!")
+                print(" \n Employee not found!")
 
         elif option == "3":
             emp_id = input("Enter Employee ID to Delete: ").strip()
             employees = manager.view_employees()
             if any(emp.emp_id == emp_id for emp in employees):
                 manager.delete_employee(emp_id)
-                print("Employee deleted successfully!")
+                print(" \n Employee deleted successfully!")
             else:
-                print("Employee ID not found. No deletion performed.")
+                print("\n Employee ID not found. No deletion performed.")
 
         elif option == "4":
             employees = manager.view_employees()
@@ -74,7 +74,7 @@ def main():
                 for emp in employees:
                     print(f"{emp.emp_id:<5} {emp.name:<20} {emp.designation:<25} {emp.salary:<10}")
             else:
-                print("No employees found!")
+                print("\n No employees found!")
 
 
         elif option == "5":
@@ -85,7 +85,7 @@ def main():
                 for emp in results:
                     print(f"ID: {emp.emp_id}, Name: {emp.name}, Designation: {emp.designation}, Salary: {emp.salary}")
             else:
-                print("No matching employees found!")
+                print("\n No matching employees found!")
 
         elif option == "6":
             confirm_exit = input("Are you sure you want to exit? (yes/no): ").strip().lower()
